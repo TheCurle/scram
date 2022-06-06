@@ -20,7 +20,17 @@
                 <a class="d-block" href="#" th:text="${currentUser.name}"></a>
             </div>
         </div>
-
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
 
@@ -29,29 +39,29 @@
                      with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">
+                    <a class="nav-link" th:classappend="${#request.requestURI == '/' ? 'active' : ''}" href="/">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
 
-                <li class="nav-item has-treeview">
+                <li class="nav-item has-treeview" th:classappend="${#request.requestURI.startsWith('/user') ? 'menu-open' : ''}">
                     <a class="nav-link" href="#">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
-                            User
+                            Manage Users
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/list">
+                            <a class="nav-link" th:classappend="${#request.requestURI == '/user/list' ? 'active' : ''}" href="/user/list">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List User</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/user/add">
+                            <a class="nav-link" th:classappend="${#request.requestURI == '/user/add' ? 'active' : ''}" href="/user/add">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add User</p>
                             </a>
@@ -59,19 +69,6 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>Contact</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>About</p>
-                    </a>
-                </li>
 
             </ul>
         </nav>
