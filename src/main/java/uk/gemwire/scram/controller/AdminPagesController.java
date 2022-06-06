@@ -9,8 +9,12 @@ import uk.gemwire.scram.user.UserRepository;
 
 import java.util.List;
 
+/**
+ * Routes pages for the admin backend.
+ * These are only accessible to users with the "all" access.
+ */
 @Controller
-public class AdminPagesController {
+public class AdminPagesController extends RootController {
 
     @Autowired
     private UserRepository userRepository;

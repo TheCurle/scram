@@ -26,67 +26,6 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">3</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a class="dropdown-item" href="#">
-                    <!-- Message Start -->
-                    <div class="media">
-                        <img alt="User Avatar" class="img-size-50 mr-3 img-circle"
-                             src="/webjars/AdminLTE/3.1.0/dist/img/user1-128x128.jpg">
-                        <div class="media-body">
-                            <h3 class="dropdown-item-title">
-                                Brad Diesel
-                                <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                            </h3>
-                            <p class="text-sm">Call me whenever you can...</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                        </div>
-                    </div>
-                    <!-- Message End -->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                    <!-- Message Start -->
-                    <div class="media">
-                        <img alt="User Avatar" class="img-size-50 img-circle mr-3"
-                             src="/webjars/AdminLTE/3.1.0/dist/img/user8-128x128.jpg">
-                        <div class="media-body">
-                            <h3 class="dropdown-item-title">
-                                John Pierce
-                                <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                            </h3>
-                            <p class="text-sm">I got your message bro</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                        </div>
-                    </div>
-                    <!-- Message End -->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">
-                    <!-- Message Start -->
-                    <div class="media">
-                        <img alt="User Avatar" class="img-size-50 img-circle mr-3"
-                             src="/webjars/AdminLTE/3.1.0/dist/img/user3-128x128.jpg">
-                        <div class="media-body">
-                            <h3 class="dropdown-item-title">
-                                Nora Silvester
-                                <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                            </h3>
-                            <p class="text-sm">The subject goes here</p>
-                            <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                        </div>
-                    </div>
-                    <!-- Message End -->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item dropdown-footer" href="#">See All Messages</a>
-            </div>
-        </li>
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
@@ -117,31 +56,23 @@
         <li class="nav-item dropdown user-menu show">
             <a aria-expanded="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
                 <img alt="User Image" class="user-image img-circle elevation-2"
-                     src="/webjars/AdminLTE/3.1.0/dist/img/user2-160x160.jpg">
-                <span class="d-none d-md-inline">Alexander Pierce</span>
+                     th:src="${currentUser.avatar}">
+                <span class="d-none d-md-inline" th:text="${currentUser.name}"></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <!-- User image -->
                 <li class="user-header bg-primary">
                     <img alt="User Image" class="img-circle elevation-2"
-                         src="/webjars/AdminLTE/3.1.0/dist/img/user2-160x160.jpg">
+                         th:src="${currentUser.avatar}">
 
-                    <p>
-                        Alexander Pierce - Web Developer
-                        <small>Member since Nov. 2012</small>
+                    <p th:text="${currentUser.name}">
                     </p>
                 </li>
                 <!-- Menu Body -->
                 <li class="user-body">
                     <div class="row">
                         <div class="col-4 text-center">
-                            <a href="#">Followers</a>
-                        </div>
-                        <div class="col-4 text-center">
-                            <a href="#">Sales</a>
-                        </div>
-                        <div class="col-4 text-center">
-                            <a href="#">Friends</a>
+                            <a href="#">Servers</a>
                         </div>
                     </div>
                     <!-- /.row -->

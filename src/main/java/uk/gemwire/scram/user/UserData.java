@@ -24,6 +24,9 @@ public class UserData {
     @Column(nullable = false, length = 60)
     private String password_hash;
 
+    @Column(length = 50)
+    private String avatar;
+
     public Long getID() {
         return ID;
     }
@@ -70,5 +73,26 @@ public class UserData {
 
     public void setHash(String hash) {
         this.password_hash = hash;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", access='" + access + '\'' +
+                ", home='" + home + '\'' +
+                ", password_hash='" + password_hash + '\'' +
+                ", avatar='" + avatar + '\'' +
+                '}';
     }
 }
